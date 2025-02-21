@@ -1,5 +1,8 @@
 mod cli;
+mod file_io;
 use cli::args::{CliArgs, Mycommand};
+use cli::commands;
+use file_io::reader;
 use clap::Parser;
 
 fn main() {
@@ -7,10 +10,10 @@ fn main() {
 
     match args.command{
         Mycommand::Encrypt { file, key } => {
-            println!("{:?}, {:?}",file,key);
+           
         }
         Mycommand::Decrypt { file, key } => {
-            println!("{:?}, {:?}",file,key);
+            
         }
     }
 }
