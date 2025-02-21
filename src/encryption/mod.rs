@@ -1,2 +1,2 @@
 pub mod aes;
-pub mod chachas;
+pub mod chacha;

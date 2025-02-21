@@ -13,22 +13,28 @@ pub struct CliArgs{
 #[derive(Subcommand,Debug)]
 pub enum Mycommand{
 
-    /// 파일 암호화 : cargo run -- encrypt --file <file.txt> --key <key>
+    /// 파일 암호화 : cargo run -- encrypt --file <file.txt> --key <key> --algo <aes>
     Encrypt{
         #[arg(short,long)]
         file : String,
 
         #[arg(short,long)]
         key: String,
+
+        #[arg(short,long, default_value = "aes")]
+        algo: String,
     },
 
-    /// 파일 복호화 : cargo run -- decrypt --file <file.txt> --key <key>
+    /// 파일 복호화 : cargo run -- decrypt --file <file.txt> --key <key> -- algo <chacha>
     Decrypt{
         #[arg(short,long)]
         file: String,
 
         #[arg(short,long)]
         key:String,
+
+        #[arg(short,long, default_value = "aes")]
+        algo: String,
     }
 }
 
