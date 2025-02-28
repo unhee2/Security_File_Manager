@@ -13,8 +13,7 @@ pub struct CliArgs{
 #[derive(Subcommand,Debug)]
 pub enum Mycommand{
 
-    /// 파일 암호화 : cargo run -- encrypt --file <file.txt> --key <key> --algo <aes> --hash_algo <sha>
-    /// 암복호화 시에 같은 알고리즘을 사용해야 함!
+    /// 🔒 파일 암호화: 지정된 알고리즘(AES 또는 ChaCha)으로 파일을 암호화합니다.
     Encrypt{
         #[arg(short,long)]
         file : String,
@@ -25,12 +24,9 @@ pub enum Mycommand{
         #[arg(short,long, default_value = "aes")]
         algo: String,
 
-        #[arg(short,long, default_value = "sha")]
-        hash_algo: String,
     },
 
-    /// 파일 복호화 : cargo run -- decrypt --file <file.txt> --key <key> -- algo <chacha> --hash_algo <blake>
-    /// 암복호화 시에 같은 알고리즘을 사용해야 함!
+    /// 🔓 파일 복호화: 같은 알고리즘(AES 또는 ChaCha)으로 암호화된 파일을 복호화합니다.
     Decrypt{
         #[arg(short,long)]
         file: String,
@@ -41,8 +37,6 @@ pub enum Mycommand{
         #[arg(short,long, default_value = "aes")]
         algo: String,
 
-        #[arg(short,long, default_value = "sha")]
-        hash_algo: String,
     }
 }
 
