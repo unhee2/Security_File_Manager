@@ -59,6 +59,10 @@ cargo run -- enc(dec) -f example.txt -k mysecretkey -a aes
 ```sh
 cargo test
 ```
+## 📄 문서
+- [사용자 매뉴얼](docs/USER_MANUAL.md)
+- [보안 문서](docs/SECURITY.md)
+
 ## 📜 라이선스
 본 프로젝트는 MIT 라이선스를 따릅니다.
 
